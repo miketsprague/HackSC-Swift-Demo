@@ -14,6 +14,7 @@
 		7CB775F41A09AEA100BFD5F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB775F21A09AEA100BFD5F0 /* LaunchScreen.xib */; };
 		7CB776001A09AEA100BFD5F0 /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB775FF1A09AEA100BFD5F0 /* SwiftDemoTests.swift */; };
 		7CB7760B1A09B04000BFD5F0 /* YourDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB7760A1A09B04000BFD5F0 /* YourDataModel.swift */; };
+		7CB7761D1A09BAED00BFD5F0 /* AlamofireSwiftyJSON.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB776171A09BA8100BFD5F0 /* AlamofireSwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,7 +25,42 @@
 			remoteGlobalIDString = 7CB775E31A09AEA100BFD5F0;
 			remoteInfo = SwiftDemo;
 		};
+		7CB776161A09BA8100BFD5F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB7760F1A09BA8100BFD5F0 /* Alamofire-SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A8AFB70F19D1401D0070765E;
+			remoteInfo = AlamofireSwiftyJSON;
+		};
+		7CB776181A09BA8100BFD5F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB7760F1A09BA8100BFD5F0 /* Alamofire-SwiftyJSON.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A8AFB71A19D1401D0070765E;
+			remoteInfo = AlamofireSwiftyJSONTests;
+		};
+		7CB7761A1A09BA9800BFD5F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7CB7760F1A09BA8100BFD5F0 /* Alamofire-SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A8AFB70E19D1401D0070765E;
+			remoteInfo = AlamofireSwiftyJSON;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7CB7761C1A09BAD400BFD5F0 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7CB7761D1A09BAED00BFD5F0 /* AlamofireSwiftyJSON.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7CB775E41A09AEA100BFD5F0 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +74,7 @@
 		7CB775FE1A09AEA100BFD5F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CB775FF1A09AEA100BFD5F0 /* SwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoTests.swift; sourceTree = "<group>"; };
 		7CB7760A1A09B04000BFD5F0 /* YourDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourDataModel.swift; sourceTree = "<group>"; };
+		7CB7760F1A09BA8100BFD5F0 /* Alamofire-SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "Alamofire-SwiftyJSON.xcodeproj"; path = "Alamofire-SwiftyJSON/Alamofire-SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +98,7 @@
 		7CB775DB1A09AEA000BFD5F0 = {
 			isa = PBXGroup;
 			children = (
+				7CB7760F1A09BA8100BFD5F0 /* Alamofire-SwiftyJSON.xcodeproj */,
 				7CB775E61A09AEA100BFD5F0 /* SwiftDemo */,
 				7CB775FC1A09AEA100BFD5F0 /* SwiftDemoTests */,
 				7CB775E51A09AEA100BFD5F0 /* Products */,
@@ -123,6 +161,15 @@
 			name = "Data Model";
 			sourceTree = "<group>";
 		};
+		7CB776101A09BA8100BFD5F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CB776171A09BA8100BFD5F0 /* AlamofireSwiftyJSON.framework */,
+				7CB776191A09BA8100BFD5F0 /* AlamofireSwiftyJSONTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,10 +180,12 @@
 				7CB775E01A09AEA100BFD5F0 /* Sources */,
 				7CB775E11A09AEA100BFD5F0 /* Frameworks */,
 				7CB775E21A09AEA100BFD5F0 /* Resources */,
+				7CB7761C1A09BAD400BFD5F0 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7CB7761B1A09BA9800BFD5F0 /* PBXTargetDependency */,
 			);
 			name = SwiftDemo;
 			productName = SwiftDemo;
@@ -190,6 +239,12 @@
 			mainGroup = 7CB775DB1A09AEA000BFD5F0;
 			productRefGroup = 7CB775E51A09AEA100BFD5F0 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 7CB776101A09BA8100BFD5F0 /* Products */;
+					ProjectRef = 7CB7760F1A09BA8100BFD5F0 /* Alamofire-SwiftyJSON.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				7CB775E31A09AEA100BFD5F0 /* SwiftDemo */,
@@ -197,6 +252,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		7CB776171A09BA8100BFD5F0 /* AlamofireSwiftyJSON.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AlamofireSwiftyJSON.framework;
+			remoteRef = 7CB776161A09BA8100BFD5F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		7CB776191A09BA8100BFD5F0 /* AlamofireSwiftyJSONTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireSwiftyJSONTests.xctest;
+			remoteRef = 7CB776181A09BA8100BFD5F0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		7CB775E21A09AEA100BFD5F0 /* Resources */ = {
@@ -244,6 +316,11 @@
 			isa = PBXTargetDependency;
 			target = 7CB775E31A09AEA100BFD5F0 /* SwiftDemo */;
 			targetProxy = 7CB775FA1A09AEA100BFD5F0 /* PBXContainerItemProxy */;
+		};
+		7CB7761B1A09BA9800BFD5F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlamofireSwiftyJSON;
+			targetProxy = 7CB7761A1A09BA9800BFD5F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // MARK: private properties
     
     // Your data (retrieved from the Interweb)
     private var data : [YourDataModel] = []
+    private let url = "http://guidebook.com/service/v2/upcomingGuides/"
     
     @IBOutlet weak private var tableView: UITableView!
     
@@ -23,10 +26,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        for i in (0...3) {
-            let dataModel = YourDataModel()
-            dataModel.name = "Test"
-            self.data += [dataModel]
+        Alamofire.request(.GET, url)
+            .responseJSON { (_, _, json, _) in
+                
+                let test = JSON(json!)
+                self.data = test["data"].arrayValue.map { dict in
+                    let dataModel = YourDataModel()
+                    dataModel.name = dict["name"].stringValue
+                    return dataModel
+                }
+
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.tableView.reloadData()
+                }
         }
     }
     
@@ -36,7 +48,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.backgroundColor = UIColor.clearColor()
 
             let dataModel = self.data[indexPath.row]
-            cell.textLabel.text = "Load json text"
+            cell.textLabel.text = dataModel.name
 
             return cell
         }
@@ -46,6 +58,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
+    }
+    
+    // MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
 
