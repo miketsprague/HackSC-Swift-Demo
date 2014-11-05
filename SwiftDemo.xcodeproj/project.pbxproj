@@ -13,6 +13,7 @@
 		7CB775F11A09AEA100BFD5F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CB775F01A09AEA100BFD5F0 /* Images.xcassets */; };
 		7CB775F41A09AEA100BFD5F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CB775F21A09AEA100BFD5F0 /* LaunchScreen.xib */; };
 		7CB776001A09AEA100BFD5F0 /* SwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB775FF1A09AEA100BFD5F0 /* SwiftDemoTests.swift */; };
+		7CB7760B1A09B04000BFD5F0 /* YourDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB7760A1A09B04000BFD5F0 /* YourDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		7CB775F91A09AEA100BFD5F0 /* SwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CB775FE1A09AEA100BFD5F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CB775FF1A09AEA100BFD5F0 /* SwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDemoTests.swift; sourceTree = "<group>"; };
+		7CB7760A1A09B04000BFD5F0 /* YourDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YourDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		7CB775E61A09AEA100BFD5F0 /* SwiftDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7CB776091A09B02D00BFD5F0 /* Data Model */,
 				7CB775E91A09AEA100BFD5F0 /* AppDelegate.swift */,
 				7CB775EB1A09AEA100BFD5F0 /* ViewController.swift */,
 				7CB775ED1A09AEA100BFD5F0 /* Main.storyboard */,
@@ -110,6 +113,14 @@
 				7CB775FE1A09AEA100BFD5F0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CB776091A09B02D00BFD5F0 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				7CB7760A1A09B04000BFD5F0 /* YourDataModel.swift */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			files = (
 				7CB775EC1A09AEA100BFD5F0 /* ViewController.swift in Sources */,
 				7CB775EA1A09AEA100BFD5F0 /* AppDelegate.swift in Sources */,
+				7CB7760B1A09B04000BFD5F0 /* YourDataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
