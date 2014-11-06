@@ -26,16 +26,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        // get request for our json
         Alamofire.request(.GET, url)
             .responseJSON { (_, _, json, _) in
                 
-                let test = JSON(json!)
-                self.data = test["data"].arrayValue.map { dict in
-                    let dataModel = YourDataModel()
-                    dataModel.name = dict["name"].stringValue
-                    return dataModel
+                let jsonData = JSON(json!)
+                
+                // Go through the json dict's "data" value (which is an array)
+                // and read each element as a dictionary, then parse it into your data model.
+                self.data = jsonData["data"].arrayValue.map { jsonDict in
+                    YourDataModel(jsonData: jsonDict)
                 }
-
+                
+                // Run reloadData on main thread to ensure UI updates
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.reloadData()
                 }

@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class YourDataModel {
-    var name = "Your Data Model"
+    let name : String
+    
+    
+    init(jsonData: JSON) {
+        self.name = dict["name"].stringValue
+    }
 }
