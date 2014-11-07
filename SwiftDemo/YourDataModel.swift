@@ -14,6 +14,6 @@ class YourDataModel {
     
     
     init(jsonData: JSON) {
-        self.name = dict["name"].stringValue
+        self.name = jsonData["name"].stringValue
     }
 }

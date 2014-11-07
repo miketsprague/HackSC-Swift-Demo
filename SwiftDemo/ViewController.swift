@@ -27,10 +27,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.dataSource = self
         
         // get request for our json
-        Alamofire.request(.GET, url)
-            .responseJSON { (_, _, json, _) in
-                
-                let jsonData = JSON(json!)
+        Alamofire.request(.GET, url).responseJSON { (_, _, json, _) in
+            if let unwrappedJson: AnyObject = json {
+                let jsonData = JSON(unwrappedJson)
                 
                 // Go through the json dict's "data" value (which is an array)
                 // and read each element as a dictionary, then parse it into your data model.
@@ -42,20 +41,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.reloadData()
                 }
+            }
         }
     }
     
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let cell : UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as? UITableViewCell {
-            cell.backgroundColor = UIColor.clearColor()
+        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as? UITableViewCell {
 
             let dataModel = self.data[indexPath.row]
             cell.textLabel.text = dataModel.name
+            cell.backgroundColor = UIColor.clearColor()
 
             return cell
         }
-        // This should never happen:
+        
+        // This should never happen, as long as the reuse identifier was properly set in the storyboard:
         return UITableViewCell()
     }
     
