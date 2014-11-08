@@ -27,7 +27,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.dataSource = self
         
         // get request for our json
-        Alamofire.request(.GET, url).responseJSON { (_, _, json, _) in
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        Alamofire.request(.GET, url).responseJSON { (_, _, json, error) in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             if let unwrappedJson: AnyObject = json {
                 let jsonData = JSON(unwrappedJson)
                 
@@ -41,6 +43,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.reloadData()
                 }
+            } else {
+                UIAlertView(title: "Error!", message: "\(error)", delegate: nil, cancelButtonTitle: "Okay :(").show()
             }
         }
     }
