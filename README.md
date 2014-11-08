@@ -30,9 +30,14 @@ https://github.com/Alamofire/Alamofire
 
 ### Must read tech blogs / newsletters
 [NSHipster](http://www.nshipster.com): a journal of the overlooked bits in Objective-C, Swift, and Cocoa. Updated weekly.
+
 [objc.io](http://www.objc.io/): not just objective c--they have swift too!
+
 [iOS Dev Weekly](http://iosdevweekly.com/): hand picked round up of the best iOS development links every week.
-[SoSoSwift](http://www.sososwift.com/): shitty website, good content regarding swift resources
+
+[SoSoSwift](http://www.sososwift.com/): shitty website, good content regarding swift resources.
+
 [LearnSwift.tips](http://www.learnswift.tips/): A curated list of helpful resources to learn Swift. Tutorials, Code Samples, References and more! 
+
 [cocoa controls](https://www.cocoacontrols.com/): shitty website, but a ton of awesome open source libraries updated frequently.
 
