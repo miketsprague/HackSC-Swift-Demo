@@ -41,3 +41,4 @@ https://github.com/Alamofire/Alamofire
 
 [cocoa controls](https://www.cocoacontrols.com/): shitty website, but a ton of awesome open source libraries updated frequently.
 
+[Functional Programming in Swift](http://www.objc.io/books/): A really good book (not free) on functional programming.
